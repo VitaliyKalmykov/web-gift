@@ -6,7 +6,13 @@ interface HeaderLinkProps {
 const HeaderLink = ({ text, href }: HeaderLinkProps) => {
     return (
         <li>
-            <a className="font-bold" href={href}>{text}</a>
+            <a className="
+            font-semibold
+            text-color-secondary
+            hover:text-color-secondary-dark
+            relative
+            link
+            " href={href}>{text}</a>
         </li>
     );
 };

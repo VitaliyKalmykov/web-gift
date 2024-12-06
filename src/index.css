@@ -2,19 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/*colors var*/
 @layer utilities {
+    /*gradient var*/
     .header-gradient {
-        background: linear-gradient(90deg, rgba(230,207,175,1) 8%, rgba(121,73,41,1) 38%, rgba(121,73,41,1) 61%, rgba(227,200,169,1) 83%, rgba(237,222,186,1) 88%);
+        background: rgb(230,207,175);
+        background: linear-gradient(90deg, rgba(230,207,175,1) 10%, rgba(121,73,41,1) 25%, rgba(121,73,41,1) 73%, rgba(237,222,186,1) 88%);   }
+    /*svg vars*/
+    .header__svg-fill-primary {
+       fill: #FFB86F
     }
-    .svgfill {
-       fill: #794929
+    .header__svg-fill-secondary {
+        fill: #FFD700
+    }
+    /*texts var's*/
+    .text-color-secondary {
+        color: #F1E7D1;
+    }
+    .text-color-secondary-dark {
+        color: #FFB86F;
     }
 }
+
+
 @layer components {
+    /*container for content*/
     .container {
     width: 100%;
     max-width: 1288px;
     margin: 0 auto;
     padding: 12px 24px;
+    }
+    /*after underline link*/
+    .link::after {
+        content: '';
+        border: 1px solid transparent;
+        position: absolute;
+        bottom: -5px;
+        right: 0;
+        width: 0%;
+        height: 0%;
+        transition: all 0.5s;
+    }
+
+    .link:hover::after {
+        width: 100%;
+        left: 0;
+        border-color: #F1E7D1;
     }
 }
