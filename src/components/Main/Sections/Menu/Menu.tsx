@@ -3,12 +3,12 @@ import  {useState, useEffect} from "react";
 
 //pic's import
 import Jerk1 from '../../../../images/jerks1.webp'
-import Jerk2 from '../../../../images/jerks2.jpg'
+import Jerk2 from '../../../../images/jerks1.webp'
 import Jerk3 from '../../../../images/jerks3.webp'
 
 //components import
 import FoodCard from "./FoodCard";
-import ModalJerk from "./ModalJerk";
+import FoodModal from "./FoodModal/FoodModal";
 
 //int import
 import {IJerk} from "../../../../typization/types";
@@ -104,7 +104,7 @@ const Menu = () => {
                     </div>
 
                 {/*модалка*/}
-                {isModalOpen && (<ModalJerk selectedJerk={selectedJerk} closeModal={closeModal} />)}
+                {isModalOpen && (<FoodModal selectedJerk={selectedJerk} closeModal={closeModal} />)}
 
         </section>
     );

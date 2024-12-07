@@ -1,3 +1,9 @@
+//Інтерфейс СВГ іконок
+export interface ISvgIconsProps  {
+    name: 'phone' | 'basket' | "minus" | "plus";
+    className?: string;
+}
+
 // Інтерфейс для об'єктів карток джерок
 export interface IJerk {
     image: string; // Шлях до зображення

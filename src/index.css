@@ -15,6 +15,12 @@
     .header__svg-fill-secondary {
         fill: #FFD700
     }
+    .modal__svg-fill--plus {
+        color: chartreuse;
+    }
+    .modal__svg-fill--minus {
+        color: crimson;
+    }
     /*texts var's*/
     .text-color-secondary {
         color: #F1E7D1;
