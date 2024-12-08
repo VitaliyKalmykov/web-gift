@@ -40,6 +40,7 @@ const Menu = () => {
         setSelectedJerk(null)
     };
 
+
   //арей об'єктів джерок
     const jerksArray: IJerk[] = [
         {
@@ -104,7 +105,10 @@ const Menu = () => {
                     </div>
 
                 {/*модалка*/}
-                {isModalOpen && (<FoodModal selectedJerk={selectedJerk} closeModal={closeModal} />)}
+                {isModalOpen && (<FoodModal
+                    selectedJerk={selectedJerk}
+                    closeModal={closeModal}
+                />)}
 
         </section>
     );

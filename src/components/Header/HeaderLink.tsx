@@ -8,11 +8,11 @@ const HeaderLink = ({ text, href }: HeaderLinkProps) => {
         <li>
             <a className="
             font-semibold
-            text-color-secondary
-            hover:text-color-secondary-dark
+            text-color-primary
+            hover:text-color-secondary
             relative
-            link
-            " href={href}>{text}</a>
+            link"
+               href={href}>{text}</a>
         </li>
     );
 };

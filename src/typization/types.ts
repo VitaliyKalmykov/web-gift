@@ -1,3 +1,13 @@
+import {ReactNode} from "react";
+
+//Інтерфейс кнопок
+export interface IButtonProps {
+    type?: "button" | "submit" | "reset"; // Можливі значення атрибуту "type"
+    className?: string; // Клас для стилізації
+    children: ReactNode; // Дочірній контент, може бути текстом чи іншими елементами
+    onClick?: () => void;
+}
+
 //Інтерфейс СВГ іконок
 export interface ISvgIconsProps  {
     name: 'phone' | 'basket' | "minus" | "plus";
@@ -13,19 +23,13 @@ export interface IJerk {
     weight: number;//Вага упаковки
 }
 
+//інтерфейс для карток джерок
+export interface IFoodCard extends IJerk{
+    openProductModal: () => void;
+}
 
 //інтерфейс модального вікна
 export interface ModalJerkProps {
     selectedJerk: IJerk | null;
     closeModal: () => void;
-}
-
-//інтерфейс для карток джерок
-export interface IFoodCard {
-    image: string;
-    name: string;
-    description: string;
-    price: number;
-    weight: number;//Вага упаковки
-    openProductModal: () => void;
 }

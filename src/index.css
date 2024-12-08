@@ -4,29 +4,46 @@
 
 /*colors var*/
 @layer utilities {
+    /* Colors variables */
+    :root {
+        --color-primary: #FFB86F;
+        --color-secondary: #FFD700;
+        --color-agree: #66FF00;
+        --color-disagree: #E32636;
+        --color-background-primary: #804c2c;
+        --color-background-secondary: #e6cfaf;
+    }
+
     /*gradient var*/
     .header-gradient {
         background: rgb(230,207,175);
         background: linear-gradient(90deg, rgba(230,207,175,1) 10%, rgba(121,73,41,1) 25%, rgba(121,73,41,1) 73%, rgba(237,222,186,1) 88%);   }
     /*svg vars*/
     .header__svg-fill-primary {
-       fill: #FFB86F
+       fill: var(--color-primary);
     }
     .header__svg-fill-secondary {
-        fill: #FFD700
+        fill: var(--color-secondary);
     }
     .modal__svg-fill--plus {
-        color: chartreuse;
+        color: var(--color-agree);
     }
     .modal__svg-fill--minus {
-        color: crimson;
+        color: var(--color-disagree);
     }
-    /*texts var's*/
+    /*texts vars*/
+    .text-color-primary {
+        color: var(--color-primary);
+    }
     .text-color-secondary {
-        color: #F1E7D1;
+        color: var(--color-secondary);
     }
-    .text-color-secondary-dark {
-        color: #FFB86F;
+    /*background*/
+    .background {
+        background: var(--color-background-primary);
+    }
+    .background-secondary {
+        background: var(--color-background-secondary);
     }
 }
 
@@ -52,8 +69,20 @@
     }
 
     .link:hover::after {
+        border: 1px solid var(--color-secondary);
         width: 100%;
         left: 0;
-        border-color: #F1E7D1;
+    }
+    /*button's*/
+    .button {
+        display: inline-block;
+    }
+}
+
+
+@layer base {
+    body {
+        background: rgb(230, 207, 175);
+        background: linear-gradient(90deg, rgba(230, 207, 175, 1) 10%, rgba(121, 73, 41, 1) 25%, rgba(121, 73, 41, 1) 73%, rgba(237, 222, 186, 1) 88%);
     }
 }

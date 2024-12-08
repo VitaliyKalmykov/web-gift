@@ -36,17 +36,36 @@ const ModalOrder = ({selectedJerk}:ModalOrderProps) => {
         <div className="flex flex-1 gap-4 items-center">
             <p>Кількість пакунків:</p>
             <button onClick={removePackage} className="inline-block">
-                <SymbolDefs name={"minus"} className="w-8 modal__svg-fill--minus"/>
+                <SymbolDefs name={"minus"} className="
+                border-2
+                rounded-full
+                border-red-500
+                shadow-red-500
+                w-8 h-8
+                flex justify-center
+                modal__svg-fill--minus"/>
             </button>
             <img className="w-8" src={selectedJerk?.image} alt={selectedJerk?.name}/>
             <div className="
-            border-2 border-red-500
+            border-2
+            text-3xl
+            text-center
+            border-amber-950
             flex justify-center
-             w-8 h-8 rounded-full">
+            w-10 h-10 rounded-full">
                 {countPackage}
             </div>
             <button onClick={addPackage} className="inline-block">
-                <SymbolDefs name={"plus"} className="w-8 modal__svg-fill--plus"/>
+                <SymbolDefs name={"plus"} className="
+                border-2
+                rounded-full
+                w-8 h-8
+                shadow-2xl
+                border-green-500
+                shadow-green-500
+                flex justify-center
+                modal__svg-fill--plus
+                "/>
             </button>
         </div>
     <p className="mt-2 font-bold">Підсумок: Вага - {totalWeight} грам. Вартість - {totalPrice} грн.</p>

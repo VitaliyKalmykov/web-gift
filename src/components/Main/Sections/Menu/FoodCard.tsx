@@ -1,8 +1,9 @@
 import {IFoodCard} from "../../../../typization/types";
+import Button from "../../../UI/Button";
 
 const FoodCard = ({image, name, description, price, weight, openProductModal}: IFoodCard) => {
     return (
-        <article className="border-2 p-2 rounded-xl shadow-xl">
+        <article className="border-transparent p-2 rounded-xl shadow-xl background-secondary">
             <ul className="flex flex-col justify-center items-center gap-2">
                 <li className="flex justify-center items-center">
                     <img className="w-48" src={image} alt={name}/>
@@ -18,11 +19,11 @@ const FoodCard = ({image, name, description, price, weight, openProductModal}: I
                 </li>
             </ul>
 
-            <button type={"button"}
+            <Button type={"button"}
                     className="block mx-auto border-2 p-2 rounded-lg"
                     onClick={openProductModal}>
                 До столу
-            </button>
+            </Button>
 
 
         </article>
