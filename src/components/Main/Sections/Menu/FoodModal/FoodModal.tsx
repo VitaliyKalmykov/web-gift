@@ -1,7 +1,6 @@
 import {ModalJerkProps} from "../../../../../typization/types";
 import ModalOrder from "./ModalOrder";
 import ModalOrderDescription from "./ModalOrderDescription";
-import ModalButtons from "./ModalButtons";
 
 const FoodModal = ({selectedJerk, closeModal }:ModalJerkProps) => {
 
@@ -15,8 +14,7 @@ const FoodModal = ({selectedJerk, closeModal }:ModalJerkProps) => {
             <div className="background text-color-primary p-5 rounded-xl shadow-2xl"
                  onClick={(e) => e.stopPropagation()}>
                 <ModalOrderDescription selectedJerk={selectedJerk} />
-                <ModalOrder selectedJerk={selectedJerk}/>
-                <ModalButtons closeModal={closeModal} />
+                <ModalOrder closeModal={closeModal} selectedJerk={selectedJerk}/>
                 </div>
             </div>
     );

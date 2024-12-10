@@ -14,6 +14,7 @@ const HeaderButtons = () => {
     // Функція для перемикання видимості кошика
     const toggleCartVisibility = () => {
         setIsCartVisible(!isCartVisible);
+        console.log(isCartVisible)
     };
 
     return (

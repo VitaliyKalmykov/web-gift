@@ -1,22 +1,21 @@
 interface ModalButtonsProps {
-    closeModal: () => void; // Типізація функції закриття
+    closeModal: () => void;
+    onAddToCart: () => void; // Додаємо нову функцію як пропс
 }
 
-const ModalButtons = ({closeModal}:ModalButtonsProps) => {
-
+const ModalButtons = ({ closeModal, onAddToCart }: ModalButtonsProps) => {
     return (
         <div className="flex justify-between">
-
-            {/*кнопка доданя до кошика*/}
             <button
-                className="mt-4 p-2 bg-green-500 text-white rounded-lg">
-                Додати до столу
+                onClick={() => {onAddToCart(); closeModal()}}
+                className="mt-4 p-2 bg-green-500 text-white rounded-lg"
+            >
+                Додати до кошика
             </button>
-
-            {/*кнопка закриття модального вікна*/}
             <button
+                onClick={closeModal}
                 className="mt-4 p-2 bg-red-500 text-white rounded-lg"
-                onClick={closeModal}>
+            >
                 Закрити
             </button>
         </div>
