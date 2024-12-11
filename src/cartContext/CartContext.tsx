@@ -1,5 +1,5 @@
 import React, { createContext, useState, ReactNode } from 'react';
-import { IJerk, CartContextType } from "../typization/types";
+import { IJerk, ICartContextType } from "../typization/types";
 
 // Оновлений тип для товарів у кошику
 interface CartItem extends IJerk {
@@ -7,7 +7,7 @@ interface CartItem extends IJerk {
 }
 
 // Створення контексту для кошика
-const CartContext = createContext<CartContextType | undefined>(undefined); // Контекст
+const CartContext = createContext<ICartContextType | undefined>(undefined); // Контекст
 
 const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [isCartVisible, setIsCartVisible] = useState<boolean>(false); // Відображення кошика

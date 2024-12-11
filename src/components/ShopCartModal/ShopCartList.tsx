@@ -1,7 +1,7 @@
-import {CartItem} from "../../../typization/types";
+import {ICartItem} from "../../typization/types";
 import ShopCartItem from "./ShopCartItem";
 import {useContext} from "react";
-import {CartContext} from "../../../cartContext/CartContext";
+import {CartContext} from "../../cartContext/CartContext";
 
 const ShopCartList = () => {
 
@@ -10,7 +10,7 @@ const ShopCartList = () => {
     return (
         <div className="h-96 overflow-y-auto">
             <ul className="space-y-4">
-                {cartItems.map((item: CartItem) => (
+                {cartItems.map((item: ICartItem) => (
                     <ShopCartItem key={item.id}
                                   img={item.image}
                                   name={item.name}

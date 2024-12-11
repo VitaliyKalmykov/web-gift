@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { CartContext } from "../../../cartContext/CartContext";
-import Button from "../../UI/Button";
+import { CartContext } from "../../cartContext/CartContext";
+import Button from "../UI/Button";
 
 interface ShopCartTotalProps {
     setIsCartVisible: (visible: boolean) => void;

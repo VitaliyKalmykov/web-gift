@@ -9,7 +9,7 @@ const HeaderButtons = () => {
         return null;  // Якщо контекст не ініціалізовано, не рендеримо компонент
     }
 
-    const { isCartVisible, setIsCartVisible } = context;
+    const { isCartVisible, setIsCartVisible, cartItems } = context;
 
     // Функція для перемикання видимості кошика
     const toggleCartVisibility = () => {
@@ -20,8 +20,11 @@ const HeaderButtons = () => {
     return (
         <div className="flex gap-10 items-center">
             {/* Кнопка для кошика */}
-            <button onClick={toggleCartVisibility}>
-                <SymbolDefs className="w-14 header__svg-fill-primary hover:header__svg-fill-secondary transition duration-300 ease-in-out hover:scale-125" name="basket" />
+            <button className="relative" onClick={toggleCartVisibility}>
+                <SymbolDefs
+                    className="z-50 w-14 header__svg-fill-primary hover:header__svg-fill-secondary transition duration-300 ease-in-out hover:scale-125"
+                    name="basket"/>
+                <div className="absolute top-0 -right-8 rounded-full w-8 h-7 bg-red-500 font-semibold">{cartItems.length}</div>
             </button>
             {/* Інші кнопки */}
             <button type="button">

@@ -54,6 +54,7 @@ const ModalOrder = ({ selectedJerk, closeModal }: ModalOrderProps) => {
         <>
             <div className="flex flex-1 gap-4 items-center">
                 <p>Кількість пакунків:</p>
+                <img className="w-8" src={selectedJerk?.image} alt={selectedJerk?.name}/>
                 <button onClick={removePackage} className="inline-block">
                     <SymbolDefs
                         name={"minus"}
@@ -67,7 +68,6 @@ const ModalOrder = ({ selectedJerk, closeModal }: ModalOrderProps) => {
                             modal__svg-fill--minus"
                     />
                 </button>
-                <img className="w-8" src={selectedJerk?.image} alt={selectedJerk?.name} />
                 <div className="
                     border-2
                     text-3xl
