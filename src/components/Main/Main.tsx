@@ -1,5 +1,5 @@
 import Menu from "./Sections/Menu/Menu";
-import ShopCart from "./ShopCart.tsx";
+import ShopCart from "./ShopCartModal/ShopCart.tsx";
 
 const Main = () => {
     return (

@@ -1,4 +1,5 @@
 import {ReactNode} from "react";
+import React from "react";
 
 //кількість товарів у кошику
 export interface CartItem extends IJerk {
