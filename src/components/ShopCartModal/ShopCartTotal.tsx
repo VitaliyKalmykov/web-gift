@@ -4,13 +4,17 @@ import ShopCartButtons from "./ShopCartButtons";
 
 interface ShopCartTotalProps {
     setIsCartVisible: (visible: boolean) => void;
+    isDelivery: boolean;
 }
 
 
-const ShopCartTotal = ({setIsCartVisible}: ShopCartTotalProps ) => {
-
+const ShopCartTotal = ({setIsCartVisible, isDelivery}: ShopCartTotalProps ) => {
 
     const {cartItems} = useContext(CartContext)!;
+
+    const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+    const finalPrice = totalPrice + (isDelivery ? 100 : 0);
 
     return (
         <div className="mt-6 flex flex-col gap-4">
@@ -26,11 +30,10 @@ const ShopCartTotal = ({setIsCartVisible}: ShopCartTotalProps ) => {
             <div className="flex items-center justify-between">
                 <h3 className="font-bold text-lg">Загальна вартість:</h3>
                 <p className="text-xl text-right">
-                    {cartItems.reduce((total, item) => total + item.price * item.quantity, 0)} грн.
+                    {finalPrice}
                 </p>
             </div>
-
-                {/*кнопки*/}
+               {/*кнопки*/}
                 <ShopCartButtons cartItems={cartItems} setIsCartVisible={setIsCartVisible} />
             </div>
     );

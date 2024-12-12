@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext} from "../../cartContext/CartContext";
 import ShopCartList from "./ShopCartList";
 import ShopCartTotal from "./ShopCartTotal";
@@ -7,6 +7,9 @@ import ShopForm from "./ShopForm";
 
 const ShopCart = () => {
     const { setIsCartVisible, isCartVisible, cartItems } = useContext(CartContext)!;
+
+    //доставка
+    const [isDelivery, setIsDelivery] = useState(false);
 
     if (!isCartVisible) {
         return null; // Якщо кошик не видимий, не рендеримо його
@@ -29,14 +32,14 @@ const ShopCart = () => {
                         <div className="flex justify-center items-center gap-10">
                             <div>
                                 <h2 className="text-2l font-bold mb-4">Заповніть форму для замовлення:</h2>
-                                <ShopForm />
+                                <ShopForm setIsDelivery={setIsDelivery} />
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold mb-4">Ваш кошик</h2>
                                 <ShopCartList/>
                             </div>
                         </div>
-                        <ShopCartTotal setIsCartVisible={setIsCartVisible}/>
+                        <ShopCartTotal setIsCartVisible={setIsCartVisible} isDelivery={isDelivery} />
                     </>
                 )}
             </div>

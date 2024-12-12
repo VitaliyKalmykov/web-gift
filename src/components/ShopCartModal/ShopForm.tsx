@@ -1,6 +1,10 @@
 import Input from "../UI/Input";
 
-const ShopForm = () => {
+interface IShopFormProps {
+    setIsDelivery: (isDelivery: boolean) => void;
+}
+
+const ShopForm = ({setIsDelivery}: IShopFormProps) => {
 
     return (
         <form className="h-96 flex flex-col gap-4">
@@ -46,6 +50,7 @@ const ShopForm = () => {
                     type="radio"
                     name="delivery"
                     value="delivery"
+                    onClick={() => setIsDelivery(true)}
                 /> Доставка на дім(+100грн до замовленя)
             </label>
 
@@ -53,7 +58,9 @@ const ShopForm = () => {
                 <input
                     type="radio"
                     name="delivery"
-                    value="pickup"/> Самовивіз
+                    value="pickup"
+                    onClick={() => setIsDelivery(false)}
+                /> Самовивіз
             </label>
 
         </form>
