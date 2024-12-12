@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../cartContext/CartContext";
-import Button from "../UI/Button";
+import ShopCartButtons from "./ShopCartButtons";
 
 interface ShopCartTotalProps {
     setIsCartVisible: (visible: boolean) => void;
@@ -14,7 +14,6 @@ const ShopCartTotal = ({setIsCartVisible}: ShopCartTotalProps ) => {
 
     return (
         <div className="mt-6 flex flex-col gap-4">
-
             {/*вага*/}
             <div className="flex items-center justify-between">
                 <h3 className="font-bold text-lg">Загальна вага:</h3>
@@ -32,11 +31,7 @@ const ShopCartTotal = ({setIsCartVisible}: ShopCartTotalProps ) => {
             </div>
 
                 {/*кнопки*/}
-                <div className="flex items-center justify-between">
-                    <Button className="bg-green-500 p-5 rounded-xl">Зробити замовленя</Button>
-                    <Button onClick={() => setIsCartVisible(false)} className="bg-red-500 p-5 rounded-xl">Закрити</Button>
-                </div>
-
+                <ShopCartButtons cartItems={cartItems} setIsCartVisible={setIsCartVisible} />
             </div>
     );
 };

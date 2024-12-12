@@ -8,9 +8,9 @@ interface IShopCartProps {
     weight: number;
     quantity: number;
     id: string;
-    decrease: void;
-    increase: void;
-    remove: void;
+    decrease: (id: string) => void; // Функція, яка приймає id і нічого не повертає
+    increase: (id: string) => void;
+    remove: (id: string) => void;
 }
 
 const ShopCartItem = ({img, name, weight, price, quantity, id, decrease, increase, remove}: IShopCartProps) => {
@@ -38,7 +38,7 @@ const ShopCartItem = ({img, name, weight, price, quantity, id, decrease, increas
                         <SymbolDefs name="plus" className="w-4 h-4"/>
                     </Button>
                 </div>
-               <div className="">
+               <div>
                    <Button
                        onClick={() => remove(id)}
                        className="ml-4 p-2 border rounded-full bg-gray-500 text-white hover:bg-gray-600 transition"

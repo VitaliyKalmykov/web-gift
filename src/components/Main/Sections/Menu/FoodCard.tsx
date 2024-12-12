@@ -1,6 +1,5 @@
 import {IFoodCard} from "../../../../typization/types";
 import Button from "../../../UI/Button";
-import React from "react";
 
 const FoodCard = ({image, name, description, price, weight, openProductModal}: IFoodCard) => {
     return (

@@ -8,7 +8,7 @@ export interface ICartItem extends IJerk {
 
 // Інтерфейс для об'єктів карток джерок
 export interface IJerk {
-    id: number;
+    id: string;
     image: string; // Шлях до зображення
     name: string; // Назва джерки
     description: string; // Опис джерки
@@ -24,6 +24,19 @@ export interface ICartContextType {
     increaseItemQuantity: (id: string | number) => void; // Функція для збільшення кількості товару
     decreaseItemQuantity: (id: string | number) => void; // Функція для зменшення кількості товару
     removeFromCart: (id: string | number) => void; // Функція для видалення товару з кошика
+}
+
+//Інтерфейс інпуту
+export interface IInputProps {
+    htmlFor: string;
+    classNameLabel?: string;
+    classNameDiv?: string;
+    classNameInput?: string;
+    children?: ReactNode;
+    type: string;
+    id: string;
+    placeholder?: string;
+    name: string;
 }
 
 //Інтерфейс кнопок
