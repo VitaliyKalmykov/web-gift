@@ -37,7 +37,10 @@ const ShopCart = () => {
                         <div className="flex justify-center items-center gap-10">
                             <div>
                                 <h2 className="text-2l font-bold mb-4">Заповніть форму для замовлення:</h2>
-                                <ShopForm formRef={formRef} setIsDelivery={setIsDelivery} />
+                                <ShopForm
+                                    formRef={formRef}
+                                    setIsDelivery={setIsDelivery}
+                                    cartItems={cartItems} />
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold mb-4">Ваш кошик</h2>
