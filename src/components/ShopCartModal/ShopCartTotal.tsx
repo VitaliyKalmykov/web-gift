@@ -5,10 +5,11 @@ import ShopCartButtons from "./ShopCartButtons";
 interface ShopCartTotalProps {
     setIsCartVisible: (visible: boolean) => void;
     isDelivery: boolean;
+    formRef: React.RefObject<HTMLFormElement>;
 }
 
 
-const ShopCartTotal = ({setIsCartVisible, isDelivery}: ShopCartTotalProps ) => {
+const ShopCartTotal = ({setIsCartVisible, isDelivery, formRef}: ShopCartTotalProps ) => {
 
     const {cartItems} = useContext(CartContext)!;
 
@@ -34,7 +35,7 @@ const ShopCartTotal = ({setIsCartVisible, isDelivery}: ShopCartTotalProps ) => {
                 </p>
             </div>
                {/*кнопки*/}
-                <ShopCartButtons cartItems={cartItems} setIsCartVisible={setIsCartVisible} />
+                <ShopCartButtons formRef={formRef} cartItems={cartItems} setIsCartVisible={setIsCartVisible} />
             </div>
     );
 };

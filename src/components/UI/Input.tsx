@@ -1,7 +1,8 @@
 import {IInputProps} from "../../typization/types";
 
 
-const Input = ({htmlFor,
+const Input = ({
+                   htmlFor,
                    classNameLabel,
                    classNameDiv,
                    classNameInput,
@@ -9,12 +10,14 @@ const Input = ({htmlFor,
                    type,
                    id,
                    placeholder,
-               name
+                   name,
+                   value,
+                   onChange,
 }: IInputProps) => {
     return (
         <div className={classNameDiv}>
        <label htmlFor={htmlFor} className={classNameLabel}>{children}</label>
-        <input name={name} className={classNameInput} id={id} placeholder={placeholder} type={type} />
+        <input name={name} className={classNameInput} id={id} placeholder={placeholder} type={type} value={value} onChange={onChange} />
         </div>
     );
 };

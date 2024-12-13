@@ -37,6 +37,8 @@ export interface IInputProps {
     id: string;
     placeholder?: string;
     name: string;
+    value?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void; // Коректний тип
 }
 
 //Інтерфейс кнопок
@@ -45,6 +47,7 @@ export interface IButtonProps {
     className?: string; // Клас для стилізації
     children: ReactNode; // Дочірній контент, може бути текстом чи іншими елементами
     onClick?: () => void;
+    onSubmit?: () => void;
 }
 
 //Інтерфейс СВГ іконок

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef } from 'react';
 import { CartContext} from "../../cartContext/CartContext";
 import ShopCartList from "./ShopCartList";
 import ShopCartTotal from "./ShopCartTotal";
@@ -7,6 +7,10 @@ import ShopForm from "./ShopForm";
 
 const ShopCart = () => {
     const { setIsCartVisible, isCartVisible, cartItems } = useContext(CartContext)!;
+
+    //ссилка на форму для кнопки
+    const formRef = useRef<HTMLFormElement | null>(null);
+
 
     //доставка
     const [isDelivery, setIsDelivery] = useState(false);
@@ -25,6 +29,7 @@ const ShopCart = () => {
                         <ShopCartButtons
                             setIsCartVisible={setIsCartVisible}
                             cartItems={cartItems}
+                            formRef={formRef}
                         />
                     </>
                 ) : (
@@ -32,14 +37,14 @@ const ShopCart = () => {
                         <div className="flex justify-center items-center gap-10">
                             <div>
                                 <h2 className="text-2l font-bold mb-4">Заповніть форму для замовлення:</h2>
-                                <ShopForm setIsDelivery={setIsDelivery} />
+                                <ShopForm formRef={formRef} setIsDelivery={setIsDelivery} />
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold mb-4">Ваш кошик</h2>
                                 <ShopCartList/>
                             </div>
                         </div>
-                        <ShopCartTotal setIsCartVisible={setIsCartVisible} isDelivery={isDelivery} />
+                        <ShopCartTotal formRef={formRef} setIsCartVisible={setIsCartVisible} isDelivery={isDelivery} />
                     </>
                 )}
             </div>
