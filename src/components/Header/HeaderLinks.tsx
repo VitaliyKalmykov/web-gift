@@ -10,7 +10,7 @@ interface Link {
 const linksArray: Link[] = [{text:"Меню", href: "menu", id:"menu"},
     { text: "Готові набори", href: "sets", id:"sets"},
     {text: "Про кухара", href: "chef", id: "chef"},
-    {text: "Бонуси", href: "bonuses", id:"bonuses"},
+    {text: "Бонуса система", href: "bonuses", id:"bonuses"},
     {text: "Акції", href: "promotions", id:"promotions"}
 ]
 

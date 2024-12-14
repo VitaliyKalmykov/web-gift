@@ -7,15 +7,15 @@ interface IShopFormProps {
     setIsDelivery: (isDelivery: boolean) => void;
     formRef: React.RefObject<HTMLFormElement>;
     cartItems: ICartItem[];
+    isDelivery: boolean;
 }
 
-const ShopForm = ({ setIsDelivery, formRef, cartItems  }: IShopFormProps) => {
+const ShopForm = ({ setIsDelivery, formRef, cartItems, isDelivery  }: IShopFormProps) => {
 
 
 
     //корзина на пошту
     const [cartPost, setCartPost] = useState('')
-
 
 
     //формування корзини на пошту
@@ -34,20 +34,23 @@ const ShopForm = ({ setIsDelivery, formRef, cartItems  }: IShopFormProps) => {
             const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
             const totalWeight = cartItems.reduce((total, item) => total + item.weight * item.quantity, 0);
             const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+            const finalPrice = totalPrice + (isDelivery ? 100 : 0);
+
 
             // Формуємо остаточний текст для відправки на пошту
             const fullDetails = `
         Кількість товарів: ${totalQuantity}
-        Загальна ціна: ${totalPrice} грам.
-        Загальна вага: ${totalWeight} кг
+        Загальна ціна: ${finalPrice} грн.
+        Загальна вага: ${totalWeight} грам.
         ${cartDetails}
+       ${isDelivery ? 'Доставка на дім' : "Самовивіз"}
       `;
 
             setCartPost(fullDetails); // Оновлюємо cartPost на основі товарів у кошику
         } else {
             setCartPost('');
         }
-    }, [cartItems]);
+    }, [cartItems, isDelivery]);
 
 
     //formspree
@@ -71,6 +74,7 @@ const ShopForm = ({ setIsDelivery, formRef, cartItems  }: IShopFormProps) => {
         return Object.keys(newErrors).length === 0;
     };
 
+    //подія сабміт
     const formSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log(cartItems)
@@ -82,9 +86,14 @@ const ShopForm = ({ setIsDelivery, formRef, cartItems  }: IShopFormProps) => {
         }
     };
 
+    //інпут для телеофну
+    const handleInputChange = (event:any):void => {
+        event.target.value = event.target.value.replace(/[^0-9+]/g, '');
+    }
+
     return (
         <>
-        {state.succeeded  && <p className="text-green-900 font-bold text-xl">Дякую за замовлення ! З вами скоро зв'яжуться!</p>}
+        {state.succeeded  && <p className="text-green-900 font-bold text-xl">Дякую за замовлення ! З вами скоро зв&apos;яжуться!</p>}
         <form
             action="https://formspree.io/f/meoqwwvd"
             method="POST"
@@ -117,6 +126,7 @@ const ShopForm = ({ setIsDelivery, formRef, cartItems  }: IShopFormProps) => {
                 name="Phone Number"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
+                onInput={handleInputChange}
             >
                 Ваш телефон*
                 {errors.phoneNumber && <span className="text-red-500 p-2 text-sm">{errors.phoneNumber}</span>}

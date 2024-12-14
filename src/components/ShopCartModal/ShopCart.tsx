@@ -40,7 +40,9 @@ const ShopCart = () => {
                                 <ShopForm
                                     formRef={formRef}
                                     setIsDelivery={setIsDelivery}
-                                    cartItems={cartItems} />
+                                    cartItems={cartItems}
+                                    isDelivery={isDelivery}
+                                />
                             </div>
                             <div>
                                 <h2 className="text-2xl font-bold mb-4">Ваш кошик</h2>

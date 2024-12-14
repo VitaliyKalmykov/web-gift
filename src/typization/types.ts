@@ -39,6 +39,8 @@ export interface IInputProps {
     name: string;
     value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void; // Коректний тип
+    pattern?: string;
+    onInput?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 //Інтерфейс кнопок
