@@ -54,7 +54,7 @@ const ShopForm = ({ setIsDelivery, formRef, cartItems, isDelivery  }: IShopFormP
 
 
     //formspree
-    const [state, handleSubmit] = useForm("meoqwwvd");
+    const [state, handleSubmit] = useForm("mwpkdknj");
 
     // Спочатку всі хуки
     const [name, setName] = useState("");
@@ -95,8 +95,6 @@ const ShopForm = ({ setIsDelivery, formRef, cartItems, isDelivery  }: IShopFormP
         <>
         {state.succeeded  && <p className="text-green-900 font-bold text-xl">Дякую за замовлення ! З вами скоро зв&apos;яжуться!</p>}
         <form
-            action="https://formspree.io/f/meoqwwvd"
-            method="POST"
             onSubmit={formSubmit}  // Викликаємо власну функцію при відправці
             ref={formRef}
             className="h-96 flex flex-col gap-4"
