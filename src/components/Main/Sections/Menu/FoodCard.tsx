@@ -3,10 +3,18 @@ import Button from "../../../UI/Button";
 
 const FoodCard = ({image, name, description, price, weight, openProductModal}: IFoodCard) => {
     return (
-        <article className="border-transparent p-2 rounded-xl shadow-xl background-secondary">
+        <article className="
+        border-transparent background-secondary rounded-xl shadow-xl
+        sm:p-6
+        md:p-4
+        xl:p-2
+        ">
             <ul className="flex flex-col justify-center items-center gap-2">
                 <li className="flex justify-center items-center">
-                    <img className="w-48" src={image} alt={name}/>
+                    <img className="
+                    sm:w-18
+                    md: w-48
+                    xl:w-48" src={image} alt={name}/>
                 </li>
                 <li>
                     <h3>{name}</h3>

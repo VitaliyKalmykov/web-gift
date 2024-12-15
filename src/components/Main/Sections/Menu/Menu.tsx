@@ -95,27 +95,32 @@ const Menu = () => {
 
     return (
         <section className="container relative">
-                    <div className="grid grid-cols-3 gap-5">
+            <div className="
+             grid grid-cols-1 gap-2
+             sm:gap-4
+             md:grid-cols-2 md:gap-3
+             xl:grid-cols-3 xl:gap-5
+            ">
 
-                        {/*маплю арей в реакт компонент картку джерки*/}
-                        {jerksArray.map(((jerk, index) => (
-                            <FoodCard key={index}
-                                      id={jerk.id}
-                                      image={jerk.image}
-                                      name={jerk.name}
-                                      description={jerk.description}
-                                      price={jerk.price}
-                                      weight={jerk.weight}
-                                      openProductModal={() => chooseJerk(jerk)}
-                            />)))}
+                {/*маплю арей в реакт компонент картку джерки*/}
+                {jerksArray.map(((jerk, index) => (
+                    <FoodCard key={index}
+                              id={jerk.id}
+                              image={jerk.image}
+                              name={jerk.name}
+                              description={jerk.description}
+                              price={jerk.price}
+                              weight={jerk.weight}
+                              openProductModal={() => chooseJerk(jerk)}
+                    />)))}
 
-                    </div>
+            </div>
 
-                {/*модалка*/}
-                {isModalOpen && (<FoodModal
-                    selectedJerk={selectedJerk}
-                    closeModal={closeModal}
-                />)}
+            {/*модалка*/}
+            {isModalOpen && (<FoodModal
+                selectedJerk={selectedJerk}
+                closeModal={closeModal}
+            />)}
 
         </section>
     );

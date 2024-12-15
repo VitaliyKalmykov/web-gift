@@ -17,9 +17,12 @@ const linksArray: Link[] = [{text:"Меню", href: "menu", id:"menu"},
 //map from array header links to tsx element's
 const HeaderLinks = () => {
     return (
-        <ul className="flex justify-center items-center flex-1 gap-10 text-xl">
+        <ul className="
+    flex flex-1 justify-around items-start text-xl gap-2 flex-wrap
+  "
+        >
             {linksArray.map(link => (
-            <HeaderLink key={link.id} text={link.text} href={link.href} />
+                <HeaderLink key={link.id} text={link.text} href={link.href}/>
             ))}
         </ul>
     )
