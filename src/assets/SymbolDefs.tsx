@@ -60,8 +60,18 @@ const SymbolDefs = ({name, className} : ISvgIconsProps) => {
                     </g>
             </svg>
             )
-                ;
-
+            case "arrow":
+                return (
+                    <svg
+                        viewBox="0 0 16 16"
+                        className={className} // Передаємо клас для стилів
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M10 8L14 8V10L8 16L2 10V8H6V0L10 4.76995e-08V8Z"
+                        />
+                    </svg>
+                );
             default:
                 return null;
         }

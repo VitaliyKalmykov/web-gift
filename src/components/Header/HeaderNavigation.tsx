@@ -1,15 +1,19 @@
 import HeaderLinks from "./HeaderLinks";
+import HeaderSideBar from "./HeaderSideBar";
 
 const HeaderNavigation = () => {
+
     return (
-        //mobile first
-        <nav className="
+        <>
+            <HeaderSideBar/>
+            <nav className="
         hidden
         xl:block
         xl:flex-1
         ">
-            <HeaderLinks/>
-        </nav>
+                <HeaderLinks/>
+            </nav>
+        </>
     );
 };
 

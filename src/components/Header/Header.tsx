@@ -8,7 +8,7 @@ const Header = () => {
             {/*container of content*/}
             <div className="container flex justify-between items-center gap-5">
                 {/*logo*/}
-                <img className="w-24 rounded-3xl shadow-600" src={Logo} alt="Logo"/>
+                <img className="w-24 rounded-3xl shadow-600 z-50" src={Logo} alt="Logo"/>
                 {/*navigation*/}
                 <HeaderNavigation/>
                 {/*div of buttons contact/basket*/}

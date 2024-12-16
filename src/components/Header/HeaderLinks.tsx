@@ -18,7 +18,25 @@ const linksArray: Link[] = [{text:"Меню", href: "menu", id:"menu"},
 const HeaderLinks = () => {
     return (
         <ul className="
-    flex flex-1 justify-around items-start text-xl gap-2 flex-wrap
+        sm: flex
+        sm:flex-1
+        sm:justify-center
+        sm:flex-col
+        sm:items-center
+        sm:gap-10
+        md:flex
+        md:flex-1
+        md:justify-center
+        md:flex-col
+        md:items-center
+        md:gap-10
+   xl:flex
+   xl:flex-1
+   xl:justify-around
+   xl:items-start
+   xl:text-xl
+   xl:gap-2
+   xl:flex-wrap
   "
         >
             {linksArray.map(link => (

@@ -54,7 +54,7 @@ export interface IButtonProps {
 
 //Інтерфейс СВГ іконок
 export interface ISvgIconsProps  {
-    name: 'phone' | 'basket' | "minus" | "plus";
+    name: 'phone' | 'basket' | "minus" | "plus" | 'arrow';
     className?: string;
 }
 
