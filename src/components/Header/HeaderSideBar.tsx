@@ -65,7 +65,7 @@ const HeaderSideBar = () => {
             {/* Контейнер з посиланнями, який приховується/відображається */}
             <div  className={`
         fixed top-0 left-0 w-full
-        ${isSidebarOpen ? "translate-y-0" : "-translate-y-full"}
+        ${isSidebarOpen ? "translate-y-0" : "-translate-y-[200vh]"}
         transition-transform duration-500 ease-in-out
         bg-white flex flex-col pt-16`
             } style={{ height: `${windowHeight}px` }}  // Встановлюємо висоту за допомогою JavaScript
