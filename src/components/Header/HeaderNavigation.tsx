@@ -1,7 +1,11 @@
 import HeaderLinks from "./HeaderLinks";
 import HeaderSideBar from "./HeaderSideBar";
 
-const HeaderNavigation = () => {
+interface IHeaderNavigationProps {
+    setCurrentSection: (section: string) => void;
+}
+
+const HeaderNavigation = ({setCurrentSection}:IHeaderNavigationProps) => {
 
     return (
         <>
@@ -11,7 +15,7 @@ const HeaderNavigation = () => {
         xl:block
         xl:flex-1
         ">
-                <HeaderLinks/>
+                <HeaderLinks setCurrentSection={setCurrentSection}/>
             </nav>
         </>
     );

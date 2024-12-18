@@ -1,11 +1,18 @@
 interface HeaderLinkProps {
     text: string;
     href: string;
+    onClick?: () => void;
 }
 
-const HeaderLink = ({ text, href }: HeaderLinkProps) => {
+const HeaderLink = ({ text, href, onClick }: HeaderLinkProps) => {
+
+    const handleClick = (e: React.MouseEvent) => {
+        e.preventDefault(); // Зупиняємо стандартне перенаправлення
+        if (onClick) onClick();  // Викликаємо функцію onClick, яку передали як пропс
+    };
+
     return (
-        <li>
+        <li onClick={handleClick}>
             <a className="
             font-semibold
             text-color-primary

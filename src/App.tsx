@@ -6,13 +6,17 @@ import { CartProvider } from './cartContext/CartContext';
 import ShopCart from "./components/ShopCartModal/ShopCart";
 import {CallProvider} from "./callContext/CallContext";
 import CallModal from "./components/CallModal/CallModal";
+import {useState} from "react";
 
 function App() {
+
+    const [currentSection, setCurrentSection] = useState<string>("menu");
+
     return (
         <CartProvider>
             <CallProvider>
-            <Header />
-            <Main />
+            <Header setCurrentSection={setCurrentSection} />
+            <Main currentSection={currentSection} />
             <Footer />
             <ShopCart/>
                 <CallModal/>

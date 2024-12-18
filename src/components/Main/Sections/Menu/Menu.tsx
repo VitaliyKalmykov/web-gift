@@ -95,7 +95,7 @@ const Menu = () => {
 
     return (
         <section className="container relative">
-            <h1 className="text-center text-2xl mb-2">Джерки від Влада!</h1>
+            <h1 className="text-center font-bold text-2xl mb-2">Джерки від Влада!</h1>
             <h2 className="text-center mb-2 text-xl">Наше меню:</h2>
             <div className="
              grid grid-cols-1 gap-2
